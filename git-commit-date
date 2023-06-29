@@ -1,0 +1,7 @@
+#!/bin/sh -x
+
+# preserve file timestamp in git date inside commit
+# usage: git-commit-date path
+
+git commit --date="$( ls --full-time $1  | awk '{ print $6" "$7 }' )" $1
+
