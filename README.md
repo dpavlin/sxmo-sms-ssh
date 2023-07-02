@@ -32,7 +32,11 @@ send test sms message to your number:
 
 It's simplest to just checkout this pepository into home directory on device.
 
-# create sms-ssh-number
+# sms hook
+
+This hook is implemented in [.config/sxmo/hooks/sxmo_hook_sms.sh](.config/sxmo/hooks/sxmo_hook_sms.sh)
+
+## create sms-ssh-number
 
 This file will be used to verify numbers which are allowed to start ssh tunnel
 
@@ -42,7 +46,12 @@ ssh user@172.16.42.1
 echo "+385912345678 optional comment" >> sms-ssh-number
 ```
 
-# see log of sms messages
+When sms with number in **sms-ssh-number** is received, it will start ssh tunnel using
+[srce02-up.sh](srce02-up.sh)
+
+## see log of sms messages
+
+This hook will also save all sms messages in file on device (which you can than backup)
 
 ```
 tail -f ~/.local/state/sms.txt
@@ -54,6 +63,9 @@ There is also more elaborate [logread.sh](logread.sh) script tails all
 logs on device together for monitoring.
 
 # battery
+
+Battery monitoring is implemented in
+[.config/sxmo/hooks/sxmo_hook_statusbar.sh](.config/sxmo/hooks/sxmo_hook_statusbar.sh)
 
 to see graphs for volage and current of battery run following from xterm:
 
