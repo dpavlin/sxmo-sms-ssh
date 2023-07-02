@@ -28,3 +28,48 @@ send test sms message to your number:
 /usr/bin/sxmo_modemsendsms.sh +385912345678 "test sms"
 ```
 
+# install modified hooks from this repository
+
+It's simplest to just checkout this pepository into home directory on device.
+
+# create sms-ssh-number
+
+This file will be used to verify numbers which are allowed to start ssh tunnel
+
+```
+# ssh into device
+ssh user@172.16.42.1
+echo "+385912345678 optional comment" >> sms-ssh-number
+```
+
+# see log of sms messages
+
+```
+tail -f ~/.local/state/sms.txt
+```
+
+# see all device logs
+
+There is also more elaborate [logread.sh](logread.sh) script tails all
+logs on device together for monitoring.
+
+# battery
+
+to see graphs for volage and current of battery run following from xterm:
+
+```
+ssh user@172.16.42.1 ./battery.gnuplot
+```
+
+or
+
+```
+xterm -e 'ssh user@172.16.42.1 ./battery.gnuplot ; read'
+```
+
+To see last 10 minutes of battery usage:
+
+```
+pine64-pinephone:~$ tail ~/.local/state/battery.log
+```
+
