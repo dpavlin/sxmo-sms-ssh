@@ -1,2 +1,2 @@
-tail -f .local/state/sxmo.log
-logread -f | grep -v -E '(daemon.debug|authpriv.info)'
+tail -f $XDG_STATE_HOME/*.log
+sudo logread -f | grep -v -E '(daemon.debug|authpriv.info)'

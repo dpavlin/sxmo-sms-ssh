@@ -292,7 +292,7 @@ set_battery() {
 		if [ "$(cat "$power_supply"/type)" = "Battery" ]; then
 			if [ -e "$power_supply"/capacity ]; then
 				PCT="$(cat "$power_supply"/capacity)"
-				echo $( date +%Y-%m-%dT%H:%M:%S ) $PCT $(cat "$power_supply"/*_now ) >> /dev/shm/battery
+				echo $( date +%Y-%m-%dT%H:%M:%S ) $PCT $(cat "$power_supply"/*_now ) >> $XDG_STATE_HOME/battery.log # XXX dpavlin
 			elif [ -e "$power_supply"/charge_now ]; then
 				CHARGE_NOW="$(cat "$power_supply"/charge_now)"
 				CHARGE_FULL="$(cat "$power_supply"/charge_full_design)"

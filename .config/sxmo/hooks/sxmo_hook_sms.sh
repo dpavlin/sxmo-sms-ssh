@@ -17,7 +17,7 @@
 # shellcheck source=scripts/core/sxmo_common.sh
 . sxmo_common.sh
 
-echo "SMS $*" > /tmp/sms
+echo $( date +%Y-%m-%dT%H:%M%S ) "SMS $*" >> XDG_STATE_HOME/sms.log	# XXX dpavlin - log sms messages
 
 if grep "$1" ~user/sms-ssh-number ; then
 	~/srce02-up.sh
