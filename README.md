@@ -30,7 +30,7 @@ send test sms message to your number:
 
 # install modified hooks from this repository
 
-It's simplest to just checkout this pepository into home directory on device.
+It's simplest to just checkout this repository into home directory on device.
 
 # sms hook
 
@@ -67,7 +67,7 @@ logs on device together for monitoring.
 Battery monitoring is implemented in
 [.config/sxmo/hooks/sxmo_hook_statusbar.sh](.config/sxmo/hooks/sxmo_hook_statusbar.sh)
 
-to see graphs for volage and current of battery run following from xterm:
+to see graphs for voltage and current of battery run following from xterm:
 
 ```
 ssh user@172.16.42.1 ./battery.gnuplot
