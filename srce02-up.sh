@@ -2,6 +2,7 @@
 
 # /etc/sudoers.d/user
 #  user    ALL=NOPASSWD: ALL
+sudo ip route | tee /tmp/ip.route
 sudo ip route del default
 # remove default route to ensure that our ssh will be over gsm connection
 
@@ -15,3 +16,5 @@ done
 ssh -C -N -v -R 22022:localhost:22 dpavlin@srce02.net.ffzg.hr &
 SSH_PID=$!
 echo $SSH_PID | tee /tmp/ssh.pid | logger
+
+ip route
