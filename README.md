@@ -11,7 +11,7 @@ I spent way too much time trying to solve this, mostly because I didn't try
 ## device
 
 For device, I was fortunate than I had pinephone, one of 
-devices supported by postmarketos](https://wiki.postmarketos.org/wiki/Devices)
+[devices supported by postmarketos](https://wiki.postmarketos.org/wiki/Devices)
 
 # postmarketos usb network setup
 
